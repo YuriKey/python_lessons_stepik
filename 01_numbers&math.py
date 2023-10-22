@@ -1,3 +1,4 @@
+# определение типа данных переменной
 num_1 = 5
 print(num_1)
 print(type(num_1))
@@ -49,3 +50,24 @@ print(num_14 < num_15)
 print(num_14 >= num_15)
 print(num_14 <= num_15)
 print(num_14 != num_14)
+
+# округление
+num_17 = 19
+num_18 = 7
+print(round(num_17 / num_18))
+print(float(num_17 / num_18))
+
+# округление до n после запятой
+num_19 = 19
+num_20 = 7
+print(round(num_17 / num_18, 3))
+print(float(num_17 / num_18))
+
+# сведение к одному типу данных
+num_21 = float(10.99)  # задаем переменную типа float
+num_22 = 2  # задаем переменную типа int
+result = int(num_21 + num_22)
+print(result)
+# или
+result = num_21 + num_22
+print(int(result))
