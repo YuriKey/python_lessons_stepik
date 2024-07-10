@@ -1,4 +1,4 @@
-file_name = 'files/file2.txt'
+file_name = '../../files/file2.txt'
 data = "hello neo\n"
 
 # fw = open(file_name, 'a')

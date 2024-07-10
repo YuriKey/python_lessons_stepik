@@ -13,7 +13,7 @@
 # fw.close()
 
 
-fw = open('files/file.txt', 'r+')
+fw = open('../../files/file.txt', 'r+')
 var = fw.read()
 fw.write('hello neo\n')
 fw.write('but i`m chuck\n')
