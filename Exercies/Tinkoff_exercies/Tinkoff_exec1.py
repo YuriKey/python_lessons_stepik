@@ -1,9 +1,6 @@
-# Вите пришло уведомление от его менеджера паролей, что его пароли засветились в интернете и не являются надежными.
-# Недолго думая, Витя решил массово исправить все пароли. Пароль представляет из себя строку S из маленьких
-# латинских букв длины N. Чтобы изменить пароль, Витя выбирает две позиции в строке — a и
-# b — и меняет элементы на позициях a и b местами.
-# Так как паролей много, Витя попросил вас написать программу, которая по заданным S, a,
-# b будет генерировать новый пароль. Помогите Вите!
+# Пароль представляет из себя строку S из маленьких латинских букв длины N.
+# Чтобы изменить пароль, Витя выбирает две позиции в строке — a и b — и меняет элементы на позициях a и b местами.
+# написать программу, которая по заданным S, a, b будет генерировать новый пароль.
 
 # Формат входных данных
 # В первой строке задается пароль, который хочет поменять Витя, — S — строка длины N
@@ -11,16 +8,43 @@
 # Формат выходных данных
 # Выведите единственную строку — новый пароль, полученный из S перестановкой символов.
 
-print("Введите пароль: ")
-passw_old = list(input())
-print("Введите через пробел позиции, которые нужно поменять: ")
-ch_nums = list(input())
-var_first_index = int(ch_nums[0]) - 1
-var_second_index = int(ch_nums[len(ch_nums) - 1]) - 1
+def chars_replace():
+    while True:
+        s = input("enter password: ")
+        n = len(s)
 
-passw_new = passw_old
-a = passw_old[var_first_index]
-passw_new[var_first_index] = passw_old[var_second_index]
-passw_new[var_second_index] = a
+        if not s.isalpha():
+            print("password contains an incorrect data")
+            continue
 
-print(f"Новый пароль {int(''.join(passw_new))}.")
+        if n < 1 or n > 200:
+            print("password have incorrect size")
+            continue
+
+        user_chars = input("enter chars numbers separated by a space: ").split()
+
+        if len(user_chars) != 2:
+            print("needs only a two chars")
+            continue
+
+        if not user_chars[0].isdigit() or not user_chars[1].isdigit():
+            print("incorrect data type")
+            continue
+
+        a, b = int(user_chars[0]), int(user_chars[1])
+
+        if a < 1 or a > n or b < 1 or b > n:
+            print("some char number is incorrect")
+            continue
+
+        s = list(s)
+        s[a - 1], s[b - 1] = s[b - 1], s[a - 1]
+        print( "".join(s))
+        break
+
+
+chars_replace()
+
+
+
+
